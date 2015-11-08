@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from random import random as rand
 
 from config import *
 
@@ -22,7 +21,6 @@ if __name__ == '__main__':
                     val = float(vals[1])
                     X.append(size)
                     Y.append(val)
-            color = (rand(), rand(), rand())
             ax.plot(X, Y, label=prog)
         ax.legend()
         ax.set_xlabel('SIZE')
