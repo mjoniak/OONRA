@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <papi.h>
 
-int en = 2;
-const char* event_names[] = { "PAPI_L2_DCM", "PAPI_L2_DCH" };
+int en = 1;
+const char* event_names[] = { "PAPI_L1_ICM" };
 int events[] = { PAPI_L2_DCM, PAPI_L2_DCH };
+//const char* event_names[] = { "PAPI_L2_DCM", "PAPI_L2_DCH" };
+//int events[] = { PAPI_L2_DCM, PAPI_L2_DCH };
 //const char* event_names[] = { "PAPI_FP_OPS", "PAPI_L1_DCM" };
 //int events[] = { PAPI_FP_OPS, PAPI_L1_DCM };
 long long* values;

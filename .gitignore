@@ -1,5 +1,5 @@
-exec/
-__pycache__/
+ex5/exec/
+ex5/__pycache__/
 
 # Object files
 *.o
