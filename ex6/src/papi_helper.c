@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <papi.h>
 
-int en = 3;
-const char* event_names[] = { "FP_OPS", "L1_DCM", "L1_ICM", "L1_TCM" };
-int events[] = { PAPI_FP_OPS, PAPI_F1_DCM, PAPI_L1_ICM, PAPI_L1_TCM };
+int en = 2;
+const char* event_names[] = { "FP_OPS", "L1_DCM" };
+int events[] = { PAPI_FP_OPS, PAPI_L1_DCM };
 
 long long* values;
 int eventSet = PAPI_NULL;
@@ -30,7 +30,7 @@ void start_papi() {
 
     for (int i=0; i<en; ++i) {
         if ((papi_err = PAPI_add_event(eventSet, events[i])) != PAPI_OK ) {
-            fprintf(stderr, "Could not add event: %d %s\n", i, PAPI_strerror(papi_err));
+            fprintf(stderr, "Could not add event: %s %s\n", event_names[i], PAPI_strerror(papi_err));
         }
     }
 
@@ -51,7 +51,7 @@ void stop_papi() {
         
         int i;
         for (i = 0; i < en; ++i) {
-            printf("%s: %ld\n", event_names[i], values[i]);
+            printf("%s: %lld\n", event_names[i], values[i]);
         }
     }
 }

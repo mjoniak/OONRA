@@ -10,16 +10,16 @@ if __name__ == '__main__':
         fig.clear()
         ax = fig.add_subplot(111)
         ax.grid(True)
-        num_colours = len(PROGRAMS)
+        num_colours = len(PLOT_PROGRAMS)
         ax.set_color_cycle([cm(1.*i/num_colours) for i in range(num_colours)])
-        for i, prog in enumerate(PROGRAMS):
+        for i, prog in enumerate(PLOT_PROGRAMS):
             X = []
             Y = []
             with open('results/' + m + '/' + prog, 'r') as f:
                 for line in f:
                     vals = line.split(' ')
                     size = int(vals[0])
-                    val = int(vals[1])
+                    val = float(vals[1])
                     X.append(size)
                     Y.append(val)
             ax.plot(X, Y, label=prog)
