@@ -2,6 +2,8 @@ ex5/exec/
 ex5/__pycache__/
 ex6/exec/
 ex6/__pycache__/
+ex6/matrices/
+ex7/matrices/
 
 # Object files
 *.o
